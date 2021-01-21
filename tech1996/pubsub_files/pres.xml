@@ -1,0 +1,95 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:presentation sizeof="screen" notessizey="5783" gridspacingx="49152"
+  gridspacingy="49152">
+  <p:master id="3" slidesn="1D20078,78CD6D50" type="main" href="master03.htm"
+   xmlhref="master03.xml" template="jimplate" layout="title_body"
+   slots="title,body,dateTime,footer,slideNumber">
+   <p:schemes>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#969696,#000000,#00CC99,#3333CC,#CCCCFF,#B2B2B2"/>
+    <p:colorscheme
+     colors="#0000FF,#FFFFFF,#000000,#FFFF00,#FF9900,#00FFFF,#FF0033,#969696"/>
+    <p:colorscheme
+     colors="#FFFFCC,#000000,#808000,#999933,#339933,#800000,#0033CC,#FFCC66"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#393939,#000000,#CBCBCB,#868686,#4D4D4D,#EAEAEA"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#9F9F9F,#000000,#FFCC66,#0000FF,#CC00CC,#C0C0C0"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#868686,#000000,#CBCBCB,#0066FF,#FF0033,#009900"/>
+    <p:colorscheme
+     colors="#FFFFFF,#000000,#969696,#000000,#3399FF,#99FFCC,#CC00CC,#B2B2B2"/>
+   </p:schemes>
+  </p:master>
+  <p:master id="1" slidesn="1D20078,78D69510" type="notes" href="master01.htm"
+   layout="notes" slots="header,dateTime,slideImage,body,footer,slideNumber"/>
+  <p:master id="2" slidesn="1D20078,78D9A250" type="handout" href="master02.htm"
+   layout="handout" slots="header,dateTime,footer,slideNumber"/>
+  <p:slide id="1" slidesn="1D20078,78DFBCD0" href="slide0001.htm"
+   layout="title_subtitle" slots="centerTitle,subTitle">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="12" slidesn="1D20078,78DFBCD0" href="slide0012.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="2" slidesn="1D20078,78E14370" href="slide0002.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="3" slidesn="1D20078,78E2CA10" href="slide0003.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="4" slidesn="1D20078,78E8E490" href="slide0004.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="5" slidesn="1D20078,78EEFF10" href="slide0005.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="6" slidesn="1D20078,78F20C50" href="slide0006.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="7" slidesn="1D20078,78F826D0" href="slide0007.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="8" slidesn="1D20078,78F9AD70" href="slide0008.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="9" slidesn="1D20078,78FB3410" href="slide0009.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="10" slidesn="1D20078,78FB3410" href="slide0010.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:slide id="11" slidesn="1D20078,79014E90" href="slide0011.htm"
+   layout="title_body" slots="title,body">
+   <p:headersfooters/>
+  </p:slide>
+  <p:viewstate type="slideView" restoredleft="156" restoredtop="946"
+   hideoutlineicons="t"/>
+  <p:kinsoku language="Japanese" level="levelOne"/>
+  <p:font name="Arial" charset="0" type="4" family="34"/>
+  <p:font name="Book Antiqua" charset="0" type="4" family="18"/>
+  <p:font name="Monotype Sorts" charset="2"/>
+  <p:font name="Times New Roman" charset="0" type="4" family="18"/>
+  <p:headersfooters/>
+  <p:headersfooters notes="t" slidenumber="t"/>
+  <p:pptdocumentsettings framecolors="WhiteTextOnBlack" hideslideanimation="t"
+   browsersupport="v4"/>
+ </p:presentation>
+ <o:shapedefaults v:ext="edit" spidmax="26628">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short" color2="none [0]" weight="1pt"/>
+  <o:colormru v:ext="edit" colors="red"/>
+ </o:shapedefaults></xml>

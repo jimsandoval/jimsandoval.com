@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Software Product Specifications Tool">
+    <meta name="author" content="Jim Sandoval">
+    <meta name="keywords" content="specs, specifications, requirements management">
+
+    <title>Jim Sandoval</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/clean-blog.css" rel="stylesheet">
+    <link href="vendor/c3.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Jim Sandoval</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="personal.html">Personal</a>
+                    </li>
+                    <li>
+                        <a href="professional.html">Professional</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="height: 45px; background: darkslategrey;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article ng-app="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Specr<br/>
+                    <small><em>A Tool for Software Specifications</em></small></h2>
+
+                    <p>
+                        Try it here: <a href="http://jims-apps.s3-website-us-west-2.amazonaws.com/#/">Specr</a>
+                    </p>
+                    <p>Specr is tool I've thought about for a long time and even made a couple of un-finished attempts at. It's not completely done, but it's good enough at this point to be useable. Key features include:
+                    </p>
+                    <ul>
+                        <li>
+                            Writing specs in outline form. Each element of the outline can be explanatory text or can describe a specific software feature.
+                        </li>
+                        <li>
+                            Features can have requirements - elements of the system that can be precisely defined and tested.
+                        </li>
+                        <li>
+                            Requirements can have test cases and test cases can have results.
+                        </li>
+                        <li>
+                            Progress and current status is always visible. It can be viewed by test coverage and completion, identifying trouble spots by seeing which requirements have lots of changes, and project scope over time.
+                        </li>
+                        <li>
+                            The entire spec can be printed as a single page to foster discussion and collaboration among the team and communicate out to stakeholders the vision for the product as a whole.
+                        </li>
+                    </ul>
+                    <p>
+                    Spec'r doesn't fit in my current work environment but it provides a structure for developing apps/products/features I'd like to use. There have been times in the past I wish I had a tool like Spec'r. It was seeded by my experience at ForwardCast working with our client, trying to fight scope creep and indecision on a fixed-time, fixed-cost contract. I needed to constantly report current status and focus discussion on specific details in productive ways in an environment with extremely fluid and growing requirements, tight deadlines and fixed revenue.
+                    </p>
+                    <p>
+                    Spec'r is a Single Page App written in Vue.js. I am currently managing a team using Vue.js and a big part of my motivation to write Spec'r was to at least start out one step ahead of them and make sure I could understand their challenges in detail. The back-end is Java/REST/SQL - I'm currently planning to put the rapid prototyping tool I used to build it on GitHub. I'll post about that when I'm done.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted"> Who am I? Here's a <a href="professional-summary.html">Brief Resume</a>. Copyright &copy; Jim Sandoval, 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/clean-blog.min.js"></script>
+</body>
+
+</html>

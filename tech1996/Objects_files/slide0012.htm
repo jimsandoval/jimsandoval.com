@@ -1,0 +1,562 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+xmlns:oa="urn:schemas-microsoft-com:office:activation"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 10">
+<link id=Main-File rel=Main-File href="../Objects.htm">
+<link rel=Preview href=preview.wmf>
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+p\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+v\:textbox {display:none;}
+</style>
+<![endif]-->
+<title>Publish and Subscribe</title>
+<meta name=Description content="8/27/2016: Object Hierarchy: Example">
+<link rel=Stylesheet href="master03_stylesheet.css">
+<![if !ppt]>
+<style media=print>
+<!--.sld
+	{left:0px !important;
+	width:6.0in !important;
+	height:4.5in !important;
+	font-size:107% !important;}
+-->
+</style>
+<script src=script.js></script><script><!--
+if( !IsNts() ) Redirect( "PPTSld" );
+//--></script><!--[if vml]><script>g_vml = 1;
+</script><![endif]--><![endif]><o:shapelayout v:ext="edit">
+ <o:idmap v:ext="edit" data="10"/>
+</o:shapelayout>
+</head>
+
+<body lang=EN-US style='margin:0px;background-color:black'
+onclick="DocumentOnClick()" onresize="_RSW()" onload="LoadSld()"
+onkeypress="_KPH()">
+
+<div id=SlideObj class=sld style='position:absolute;top:0px;left:0px;
+width:534px;height:400px;font-size:16px;background-color:white;clip:rect(0%, 101%, 101%, 0%);
+visibility:hidden'><p:slide coordsize="720,540"
+ colors="#FFFFFF,#000000,#CECECE,#000000,#EBEBEB,#232323,#9C9C9C,#676767"
+ masterhref="master03.xml">
+ <p:shaperange href="master03.xml#_x0000_s1025"/><![if !ppt]><p:shaperange
+  href="master03.xml#_x0000_s1026"/>
+ <div v:shape="_x0000_s1026" class=O style='mso-char-wrap:0;mso-kinsoku-overflow:
+ 0;position:absolute;top:95.75%;left:.93%;width:23.97%;height:2.0%'><span
+ style='font-family:"Times New Roman";font-size:50%'>DRAFT: 20-Nov-96</span></div>
+ <p:shaperange href="master03.xml#_x0000_s1029"/><![if !vml]><img border=0
+ v:shapes="_x0000_s1029" src="master03_image001.gif" style='position:absolute;
+ top:21.75%;left:-.18%;width:95.88%;height:1.25%'><![endif]><p:shaperange
+  href="master03.xml#_x0000_s1031"/><![endif]><p:shaperange
+  href="master03.xml#_x0000_m1028"/><v:shape id="_x0000_s10242" type="#_x0000_m1028"
+  style='position:absolute;left:12pt;top:18pt;width:612pt;height:90pt;
+  mso-wrap-style:square;v-text-anchor:bottom' filled="f" stroked="f">
+  <v:fill o:detectmouseclick="f"/>
+  <v:stroke o:forcedash="f"/>
+  <v:shadow on="f"/>
+  <o:lock v:ext="edit" text="f"/>
+  <v:textbox style='layout-flow:horizontal;mso-fit-shape-to-text:f' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  <p:placeholder type="title"/></v:shape><v:rect id="_x0000_s10243" style='position:absolute;
+  left:229.875pt;top:166.875pt;width:163.875pt;height:373pt;mso-wrap-style:none;
+  v-text-anchor:top' filled="f" fillcolor="#ebebeb [4]" stroked="f"
+  strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect><v:rect id="_x0000_s10244" style='position:absolute;left:372pt;top:214.875pt;
+  width:166.625pt;height:199.75pt;mso-wrap-style:none;v-text-anchor:top'
+  filled="f" fillcolor="#ebebeb [4]" stroked="f" strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect><v:rect id="_x0000_s10245" style='position:absolute;left:520.75pt;
+  top:214.875pt;width:145.25pt;height:257.5pt;mso-wrap-style:none;
+  v-text-anchor:top' filled="f" fillcolor="#ebebeb [4]" stroked="f"
+  strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect><v:rect id="_x0000_s10246" style='position:absolute;left:622.875pt;
+  top:214.875pt;width:85.625pt;height:26.5pt;mso-wrap-style:none;
+  v-text-anchor:top' filled="f" fillcolor="#ebebeb [4]" stroked="f"
+  strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect><v:rect id="_x0000_s10247" style='position:absolute;left:76.75pt;
+  top:208.875pt;width:147pt;height:180.5pt;mso-wrap-style:none;v-text-anchor:top'
+  filled="f" fillcolor="#ebebeb [4]" stroked="f" strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect><v:rect id="_x0000_s10248" style='position:absolute;left:0;top:143pt;
+  width:106.125pt;height:353.75pt;mso-wrap-style:none;v-text-anchor:top'
+  filled="f" fillcolor="#ebebeb [4]" stroked="f" strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect>
+ <div v:shape="_x0000_s10242" class=T style='position:absolute;top:10.5%;
+ left:2.62%;width:83.14%;height:9.25%'>Object Hierarchy: Example</div>
+ <div v:shape="_x0000_s10243" class=O>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:31.75%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Button&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:35.25%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Canvas&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:39.0%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Checkbox&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:42.5%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Choice&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:46.0%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Container&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:49.5%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Label&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:53.25%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ List&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:56.75%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Scrollbar&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:60.25%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ TextComponent&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:63.75%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:67.5%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ MenuBar&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:71.0%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ MenuItem&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:74.5%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:78.25%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ Border Layout&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:81.75%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ CardLayout&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:85.25%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ FlowLayout&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:88.75%;left:32.95%;width:25.09%;height:3.5%'><span style='font-size:89%'>-
+ GridBagConstraints&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:92.5%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ GridBagLayout&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:96.0%;left:32.95%;width:20.97%;height:3.5%'><span style='font-size:89%'>-
+ GridLayout</span></div>
+ </div>
+ <div v:shape="_x0000_s10244" class=O>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:40.75%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%'>-
+ Panel&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:44.25%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:47.75%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:51.25%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%'>-
+ Window&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:55.0%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:58.5%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%'>-
+ TextArea&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:62.0%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%'>-
+ TextField&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:65.75%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:69.25%;left:52.62%;width:21.34%;height:3.5%'><span style='font-size:89%'>-
+ Menu&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:72.75%;left:52.62%;width:25.46%;height:3.5%'><span style='font-size:89%'>-
+ CheckboxMenuItem</span></div>
+ </div>
+ <div v:shape="_x0000_s10245" class=O>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:40.75%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%'><span
+ style='mso-spacerun:yes'>  </span>Appplet&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:44.25%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:47.75%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:51.25%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%'>-
+ Dialog&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:55.0%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%'>-
+ Frame&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:58.5%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:62.0%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:65.75%;left:73.4%;width:21.72%;height:3.5%'><span style='font-size:89%'>(
+ MenuContainer )&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:69.25%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:72.75%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:76.25%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:80.0%;left:73.4%;width:18.35%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:83.5%;left:73.4%;width:22.09%;height:3.5%'><span style='font-size:89%'>(
+ LayoutManager )</span></div>
+ </div>
+ <div v:shape="_x0000_s10246" class=O style='mso-char-wrap:0;mso-kinsoku-overflow:
+ 0;position:absolute;top:40.75%;left:87.45%;width:11.98%;height:3.5%'><span
+ style='font-size:89%'>FileDialog</span></div>
+ <div v:shape="_x0000_s10247" class=O>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:39.5%;left:11.61%;width:21.16%;height:3.5%'><span style='font-size:89%'>-
+ CheckboxGroup&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:43.25%;left:11.61%;width:18.53%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:46.75%;left:11.61%;width:18.53%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:50.25%;left:11.61%;width:18.53%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:53.75%;left:11.61%;width:18.53%;height:3.5%'><span style='font-size:89%'>-
+ Component&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:57.5%;left:11.61%;width:18.53%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:61.0%;left:11.61%;width:18.53%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:64.5%;left:11.61%;width:18.53%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:68.0%;left:11.61%;width:22.28%;height:3.5%'><span style='font-size:89%'>-
+ MenuComponent</span></div>
+ </div>
+ <div v:shape="_x0000_s10248" class=O>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:27.25%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%'>(
+ Image&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:31.0%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%'>Observer
+ )&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:34.5%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:38.0%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:41.5%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:45.25%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:48.75%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%'>Object&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:52.25%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:56.0%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:59.5%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:63.0%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:66.5%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:70.25%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:73.75%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:77.25%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:80.75%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:84.5%;left:.93%;width:12.92%;height:3.5%'><span style='font-size:89%;
+ display:none'>&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:88.0%;left:.93%;width:15.54%;height:3.5%'><span style='font-size:89%'>(
+ Cloneable )</span></div>
+ </div>
+ <v:line id="_x0000_s10249" style='position:absolute' from="234pt,179pt" to="234pt,335pt"
+  strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10249"
+ src="slide0012_image002.gif" style='position:absolute;top:33.0%;left:32.39%;
+ width:.37%;height:29.5%'><![endif]><v:line id="_x0000_s10250" style='position:absolute'
+  from="78pt,221pt" to="78pt,437pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10250"
+ src="slide0012_image003.gif" style='position:absolute;top:40.75%;left:10.67%;
+ width:.37%;height:40.5%'><![endif]><v:line id="_x0000_s10251" style='position:absolute'
+  from="60pt,269pt" to="78pt,269pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10251"
+ src="slide0012_image004.gif" style='position:absolute;top:49.75%;left:8.23%;
+ width:2.99%;height:.5%'><![endif]><v:line id="_x0000_s10252" style='position:absolute'
+  from="186pt,299pt" to="234pt,299pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10252"
+ src="slide0012_image005.gif" style='position:absolute;top:55.25%;left:25.84%;
+ width:7.11%;height:.5%'><![endif]><v:line id="_x0000_s10253" style='position:absolute'
+  from="234pt,431pt" to="234pt,527pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10253"
+ src="slide0012_image006.gif" style='position:absolute;top:79.75%;left:32.39%;
+ width:.37%;height:18.5%'><![endif]><v:line id="_x0000_s10254" style='position:absolute'
+  from="78pt,437pt" to="234pt,437pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10254"
+ src="slide0012_image007.gif" style='position:absolute;top:80.75%;left:10.67%;
+ width:22.09%;height:.5%'><![endif]><v:line id="_x0000_s10255" style='position:absolute'
+  from="378pt,227pt" to="378pt,287pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10255"
+ src="slide0012_image008.gif" style='position:absolute;top:42.0%;left:52.43%;
+ width:.37%;height:11.75%'><![endif]><v:line id="_x0000_s10256" style='position:absolute'
+  from="324pt,257pt" to="378pt,257pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10256"
+ src="slide0012_image009.gif" style='position:absolute;top:47.5%;left:44.94%;
+ width:7.86%;height:.5%'><![endif]><v:line id="_x0000_s10257" style='position:absolute'
+  from="378pt,323pt" to="378pt,348pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10257"
+ src="slide0012_image010.gif" style='position:absolute;top:59.75%;left:52.43%;
+ width:.37%;height:5.25%'><![endif]><v:line id="_x0000_s10258" style='position:absolute'
+  from="366pt,335pt" to="378pt,335pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10258"
+ src="slide0012_image011.gif" style='position:absolute;top:62.0%;left:50.74%;
+ width:2.05%;height:.5%'><![endif]><v:line id="_x0000_s10259" style='position:absolute'
+  from="378pt,378pt" to="378pt,408pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10259"
+ src="slide0012_image012.gif" style='position:absolute;top:70.0%;left:52.43%;
+ width:.37%;height:6.25%'><![endif]><v:line id="_x0000_s10260" style='position:absolute'
+  from="324pt,395pt" to="378pt,395pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10260"
+ src="slide0012_image013.gif" style='position:absolute;top:73.0%;left:44.94%;
+ width:7.86%;height:.5%'><![endif]><v:line id="_x0000_s10261" style='position:absolute'
+  from="528pt,282pt" to="528pt,312pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10261"
+ src="slide0012_image014.gif" style='position:absolute;top:52.25%;left:73.22%;
+ width:.37%;height:6.25%'><![endif]><v:line id="_x0000_s10262" style='position:absolute'
+  from="456pt,293pt" to="528pt,293pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10262"
+ src="slide0012_image015.gif" style='position:absolute;top:54.25%;left:63.29%;
+ width:10.48%;height:.5%'><![endif]><v:line id="_x0000_s10263" style='position:absolute'
+  from="444pt,227pt" to="528pt,227pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:line id="_x0000_s10264" style='position:absolute' from="600pt,227pt"
+  to="624pt,227pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10263,_x0000_s10264"
+ src="slide0012_image016.gif" style='position:absolute;top:42.0%;left:61.61%;
+ width:25.46%;height:.5%'><![endif]><v:line id="_x0000_s10265" style='position:absolute'
+  from="102pt,486pt" to="228pt,486pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10265"
+ src="slide0012_image017.gif" style='position:absolute;top:90.0%;left:14.04%;
+ width:17.97%;height:.5%'><![endif]><v:line id="_x0000_s10266" style='position:absolute'
+  from="354pt,426pt" to="516pt,462pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:line id="_x0000_s10267" style='position:absolute' from="354pt,450pt"
+  to="516pt,462pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:line id="_x0000_s10268" style='position:absolute;flip:y' from="354pt,462pt"
+  to="510pt,468pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:line id="_x0000_s10269" style='position:absolute;flip:y' from="5in,462pt"
+  to="516pt,510pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:line id="_x0000_s10270" style='position:absolute;flip:y' from="354pt,462pt"
+  to="516pt,528pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0
+ v:shapes="_x0000_s10266,_x0000_s10267,_x0000_s10268,_x0000_s10269,_x0000_s10270"
+ src="slide0012_image018.gif" style='position:absolute;top:78.75%;left:49.06%;
+ width:23.03%;height:19.5%'><![endif]><v:line id="_x0000_s10271" style='position:absolute'
+  from="540pt,318pt" to="540pt,348pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10271"
+ src="slide0012_image019.gif" style='position:absolute;top:58.75%;left:74.9%;
+ width:.37%;height:6.25%'><![endif]><v:line id="_x0000_s10272" style='position:absolute;
+  flip:y' from="444pt,366pt" to="522pt,384pt" strokecolor="black [1]"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:line id="_x0000_s10273" style='position:absolute' from="318pt,366pt"
+  to="522pt,366pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:rect id="_x0000_s10274" style='position:absolute;left:478.75pt;
+  top:131.875pt;width:236pt;height:45.75pt;mso-wrap-style:none;v-text-anchor:top'
+  filled="f" fillcolor="#ebebeb [4]" stroked="f" strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect><![if !vml]><img border=0 v:shapes="_x0000_s10272,_x0000_s10273"
+ src="slide0012_image020.gif" style='position:absolute;top:67.75%;left:44.0%;
+ width:28.83%;height:4.0%'><![endif]>
+ <div v:shape="_x0000_s10274" class=O>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:25.25%;left:67.41%;width:30.89%;height:3.5%'><span style='font-size:89%'><b><i>Component
+ and Layout&#13;</i></b></span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:28.75%;left:67.41%;width:37.07%;height:3.5%'><span style='font-size:89%'><b><i>Classes
+ for java.awt package</i></b></span></div>
+ </div>
+ <v:line id="_x0000_s10275" style='position:absolute' from="42pt,186pt" to="96pt,4in"
+  strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><v:rect id="_x0000_s10276" style='position:absolute;left:622.75pt;
+  top:499.125pt;width:86.875pt;height:40.75pt;mso-wrap-style:none;
+  v-text-anchor:top' filled="f" fillcolor="#ebebeb [4]" stroked="f"
+  strokecolor="black [1]">
+  <v:fill color2="white [0]"/>
+  <v:shadow color="#cecece [2]"/>
+  <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+ </v:rect><![if !vml]><img border=0 v:shapes="_x0000_s10275"
+ src="slide0012_image021.gif" style='position:absolute;top:34.25%;left:5.8%;
+ width:7.86%;height:19.5%'><![endif]>
+ <div v:shape="_x0000_s10276" class=O>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:93.25%;left:87.45%;width:10.11%;height:3.25%'><span style='font-size:78%'>Extends&#13;</span></div>
+ <div style='mso-char-wrap:0;mso-kinsoku-overflow:0;position:absolute;
+ top:96.25%;left:87.45%;width:12.17%;height:3.25%'><span style='font-size:78%'>Implements</span></div>
+ </div>
+ <v:line id="_x0000_s10277" style='position:absolute' from="8in,510pt" to="618pt,510pt"
+  strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10277"
+ src="slide0012_image022.gif" style='position:absolute;top:94.25%;left:79.96%;
+ width:6.36%;height:.5%'><![endif]><v:line id="_x0000_s10278" style='position:absolute'
+  from="8in,528pt" to="618pt,528pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke dashstyle="1 1" startarrowwidth="narrow" startarrowlength="short"
+   endarrowwidth="narrow" endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10278"
+ src="slide0012_image023.gif" style='position:absolute;top:97.75%;left:79.96%;
+ width:6.36%;height:.5%'><![endif]><v:line id="_x0000_s10279" style='position:absolute'
+  from="234pt,372pt" to="234pt,396pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10279"
+ src="slide0012_image024.gif" style='position:absolute;top:68.75%;left:32.39%;
+ width:.37%;height:5.0%'><![endif]><v:line id="_x0000_s10280" style='position:absolute'
+  from="222pt,378pt" to="234pt,378pt" strokecolor="black [1]" strokeweight="1pt">
+  <v:stroke startarrowwidth="narrow" startarrowlength="short" endarrowwidth="narrow"
+   endarrowlength="short"/>
+  <v:shadow color="#cecece [2]"/>
+ </v:line><![if !vml]><img border=0 v:shapes="_x0000_s10280"
+ src="slide0012_image025.gif" style='position:absolute;top:70.0%;left:30.71%;
+ width:2.05%;height:.5%'><![endif]></p:slide></div>
+
+</body>
+
+</html>

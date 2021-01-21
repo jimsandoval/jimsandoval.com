@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Complexity and Productivity in Software Development">
+    <meta name="author" content="Jim Sandoval">
+    <meta name="keywords" content="coupling, cohesion, software management, productivity">
+
+    <title>Jim Sandoval</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/clean-blog.css" rel="stylesheet">
+    <link href="vendor/c3.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .margin-side-50 {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        .c3-line-normal, .c3-line-good, .c3-line-bad, .c3-line-one, .c3-line-two, .c3-line-three, .c3-line-four, .c3-line-reeng {
+            stroke-width: 4px;
+        }
+        .c3-axis-x .tick {
+           display: none;
+        }
+        .c3-axis-y .tick {
+           display: none;
+        }
+        .links line {
+           stroke: #999;
+           stroke-opacity: 0.6;
+        }
+        .nodes circle {
+           stroke: #fff;
+           stroke-width: 1.5px;
+        }
+        .inner {
+            width: 80%;
+            margin: 0 auto; 
+        }
+        .outer {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Jim Sandoval</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="professional-summary.html">Resume</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="height: 45px; background: darkslategrey;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article ng-app="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Complexity and Productivity<br/>
+                    <small><em>Coupling and Cohesion, Part 1</em></small></h2>
+
+                    <p>If you work in any kind of medium or large company that isn't a software company it's probably pretty obvious that the software developed for the business in-house is vastly inferior to the software you use in your daily life, mostly on your phone. In-house development ("Enterprise" development) takes forever to deliver crap and software companies "get it" whatever "it" is.
+                    </p>
+                    <p>
+                    There is nothing new about this perception. Brooks starts off The Mythical Man Month examining exactly this phenomenon and he wrote in the early 1970's about his experiences at IBM in the mid-60s.
+                    </p>
+                    <div id="below-the-fold"></div>
+                    <p>
+                    Most often this gap is attributed to two things: start-ups attract a better, smarter class of developer and successful start-ups have enormous resources to pour into things like graphic design and testing. While both these things are somewhat true, one of the main reasons for the productivity gap is that software gets more complicated more quickly than people realize. Naive developers and managers don't fully appreciate how easy it is to create a big mess and how intractable those messes can be for an organization.
+                    </p>
+                    <p>
+                    In software, complexity comes in three forms:
+                    <ol>
+                    <li><strong>Algorithmic Complexity</strong> is the most intuitive meaning of complexity - using sophisticated techniques to do hard things. For instance, analyzing a genetic sequence to determine mutations uses sophisticated mathematical algorithms that have been continuously refined over 3 decades.
+                    <li><strong>Scale/Performance Complexity</strong> is another type of complexity that is intuitive and easily grasped. It's not much a surprise that doing something 10 times a day is simpler than doing the same thing 1,000 times per second. High throughput environments require much more complex operating environments.
+                    <li><strong>Combinatorial Complexity</strong> is less obvious. In one sense, it's clear that a system that does 3 simple, unrelated things is much simpler than doing 300 simple, somewhat related things, but it's often overlooked how quickly the complexity compounds in having large-ish number of simple things interacting with each other.
+                    </ol>
+                    <p>
+                    Twitter and Instagram and the like have a great deal of the first two types of complexity but, relatively speaking, not much of the third. They have relatively small feature sets. The apps a lot of people use at work to do things like handle insurance claims, settle securities trades, or report genetic sequencing results to patients have large feature sets with lots of provisions to handle special cases. They have large amounts of the third type of complexity (and depending on the business, sometimes a good deal of the other two, too). 
+                    
+                    <h3 class="text-muted">n * (n -1 ) / 2 </h3>
+
+                    <p>If there's anything equivalent to Newton's Laws in software development it's that <em>n</em> things have a possible universe of interactions between themselves of <em>n * (n-1) / 2</em>. This means, for instance, that on a team of 4 there are 4*3/2 = 6 different communication pathways between team members.
+                    </p>
+                    <p>
+                    <div class="outer">
+                        <div n-equals-four class="inner"></div>
+                    </div>
+                    </p>
+                    <p> But on a team of 8 there are 8*7/2 = 28 pathways - more than four times as much. 
+                    <p>
+                    <div class="outer">
+                        <div n-equals-eight class="inner"></div>
+                    </div>
+                    </p>
+                    <p>
+                    This scaling dynamic applies not just to team members but to everything. The number of services in an environment, number of environments in the deployment pipeline, number of database tables, test data sets, fields on a screen, cron jobs, git repositories, sign-offs... from little things big things grow. More accurately, from simple little things big complicated things grow.
+                    </p>
+                    <p>
+                    The combinatorial growth in complexity has an impact on productivity. It looks like this:
+                    </p>
+
+                    <div basic-chart class="margin-side-50"></div>
+
+
+                    <p>Productivity is initially low as the development team begins work on features. The team is doing some feature development but also laying the groundwork to automate repetitive work, whether it be writing classes to handle domain objects, selecting and learning libraries to do things like handle pop-ups and monitor usage, building tools to run automated test suites, deploy builds to test or production environments. This makes sense; one must learn to walk before one can run.
+                    </p>
+                    <p>
+                    </p>It's worth noting that before any of this begins, system architects and development managers make some high-level assumptions about the types of problems they are being asked to solve and make decisions about languages, frameworks, and methodologies that are best suited to solve these problems. Are noSQL databases like Redis the way to go or is SQL the right thing? RESTful services? Are the UIs complicated enough that a desktop app is needed? If not, which of the many javascript/web frameworks? So many decisions... and they must be made fast, almost immediately.
+                    </p> 
+                    <p> The build phase reaps the benefit of the prep phase. No longer walking, teams are running, even sprinting. The architectural bets made early-on tend to be good ones at this stage - features are straighforward to implement. Developers are focused on new features without worrying about how those features are going to break older features. The everyday design tradeoffs are clear and un-complicated, everyone agrees. The support burden is light or non-existent; everyone's working on new features. Every thing's pretty easy, it's obvious a lot of stuff is getting done. Everyone goes home satisfied and wakes up stoked to go to work. 
+                    </p>
+                    <p>Eventually, things start to slow. New features combine with existing features in un-anticipated ways. Other new features invalidate some of architectural assumptions made up-front. Teams grow and split. The number of environments and supported versions grow. The teams now spend more time on support issues and more time re-factoring code. Poorly understood aspects of that awesome tool the architects picked now require lots of time to troubleshoot arcane production issues. Design tradeoffs are more complicated, meetings are required to negotiate solutions no one is happy with. Some of the key early people have left for greener pastures.
+                    <p>
+                    Roll forward another couple of years and every little thing is hard. Stagnation has set in. There are more meetings and more burdensome lifecycle processes. Rather than "agile" now the common refrain echoing the hallways is "technical debt." The big issues are intractable and there is no executive support to address them, so the developers take refuge in small, incremental things so they can go home with some measure of satisfaction. Processes have accumulated into such an unwieldy mess that side-stepping and short-cutting them is now routine. <a href="https://en.wikibooks.org/wiki/Professionalism/Diane_Vaughan_and_the_normalization_of_deviance">Deviance has been normalized.</a> 
+                    </p>
+                    <p>
+                    Another thing worth pointing out is that not all teams are created equal. How far an organization can ride the build phase is dependent on the skill of the early architects. Good groups tend to start a little slower but stagnate much later. Less experienced groups start a little quicker by unknowingly cutting corners that come back to bite them sooner because they literally have no plan to handle combinatorial complexity.
+
+                    <div comparison-chart class="margin-side-50"></div>
+
+                    <h3 class="text-muted">Stagnation is Success</h3>
+                    In many organizations, one of the interesting and difficult factors in dealing with stagnation is that it represents success. The organization achieved what it set out to achieve and is now focused on things no one thought they'd be doing at the outset. It's hard for successful organizations to understand that success now requires new thinking, a new approach.
+                    <p>
+                    </p>
+                    One common dysfunction is that the people most responsible for that success, the early managers, architects and developers who rode the build phase, have earned a lot of political credibility and clout in the organization. 
+                    <p>
+                    </p>
+                    Generally, these people are exactly the wrong people to tackle the problem of stagnation. The problems inherent in stagnation are almost by definition outside of the scope of their original intents, their original assumptions, and often outside of their skillset. It takes a rare personality to say "Yeah, I did a good job all things considered but we're in uncharted waters now and I'm way out of my depth. I need to convince my boss to recruit some really expensive people from much bigger companies and cede control to them."
+                    </p>
+                    <h3 class="text-muted">Buying Time</h3>
+                    <p>
+                    The most common fate for stagnant organizations is that they stay stagnant. But companies often attempt to cheat by starting an "Advanced Project" or R&amp;D group to bypass the morass they've created and fast-track new, important projects. They leverage the high productivity of small teams unencumbered by the need to integrate their efforts in a coherent whole. When the project is done, it gets tossed on to the stagnant, Enterprise heap and left to the already slow team to do the difficult, slow work of integrating the new project into the set of existing projects.
+                    </p>
+                    <p>
+                    As you might've guessed, these R&amp;D groups are usually run by exactly the same people whose architectural model led to stagnation in the first place - by people who don't understand coupling and cohesion dynamics at scale.
+                    </p>
+                    <p>
+                    This two-track development provides an illusion of success for a while. Pretty soon the integration burden becomes too great. The Enterprise team all but locks up, morale plummets, the good people leave, business dissatisfication at seeming incompetence grows.
+                    </p>
+                    <h2 class="text-muted">How to Proceed</h2>
+                    <p>
+                    In a later post, I'll write about some ways to move forward.
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted"> Who am I? Here's a <a href="professional-summary.html">Brief Resume</a>. Copyright &copy; Jim Sandoval, 2016-2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="vendor/c3.min.js"></script>
+    <script src="js/clean-blog.min.js"></script>
+    <script src="js/complexity-graphs.js"></script>
+</body>
+
+</html>

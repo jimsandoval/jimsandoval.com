@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Complexity and Productivity in Software Development">
+    <meta name="author" content="Jim Sandoval">
+    <meta name="keywords" content="coupling, cohesion, software management, productivity">
+
+    <title>Jim Sandoval</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/clean-blog.css" rel="stylesheet">
+    <link href="vendor/c3.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .margin-side-50 {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        .c3-line-normal, .c3-line-good, .c3-line-bad, .c3-line-one, .c3-line-two, .c3-line-three, .c3-line-four, .c3-line-reeng {
+            stroke-width: 4px;
+        }
+        .c3-axis-x .tick {
+           display: none;
+        }
+        .c3-axis-y .tick {
+           display: none;
+        }
+        .links line {
+           stroke: #999;
+           stroke-opacity: 0.6;
+        }
+        .nodes circle {
+           stroke: #fff;
+           stroke-width: 1.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Jim Sandoval</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="personal.html">Personal</a>
+                    </li>
+                    <li>
+                        <a href="professional.html">Professional</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="height: 45px; background: darkslategrey;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article ng-app="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Making the Whole<br/>
+                    <small><em>Coupling and Cohesion, Part 3</em></small></h2>
+
+                    <p>In <a href="complexity_part_one.html">Part One</a> of this series, I dissected why combinatorial complexity is often underestimated and often destroys productivity. In <a href="complexity_part_one.html">Part Two</a> I presented soem ways to break things into pieces to limit interactions and build on a foundaiotn of loosely-coupled modules. In this third and final part, I'm going to present some ways to make sure that a groups of eparate modules each built by separate teams can evolve together in way that look slike they all designed as of one piece, that they work together cohesively as a unit.
+                    </p>
+                    Cohesion is the flip side of coupling. Once I havea lot of smallish isolated components, how do I bring them altogether into one big thing that plays?
+                    </p>
+                    <h4>Cohesion: Control Single-points of Reference</h4>
+                    <p>
+                    Once your environment is sufficiently de-coupled to allow teams to work in isolation with full confidence they can deliver new functionalty while also being able to significantly re-factor without breaking things, then <strong>Cohesion</strong> becomes the main challenge. How do you get many tens or hundreds or even thousands of individual things to come together in a way that when viewed as a whole makes sense?
+                    </p>
+                    <p> In my experience, ensuring good cohesion is the easiest thing to implement from the start, one of the the hardest things to retro-fit into large and almost impossible to sell to managers and other developers.
+                    </p>
+                    One of the most instructive examples of a very large-scale architecture that exhbits excellent coupling and cohesion dynamics is the FIX protocol. FIX is well-known within financial services industry but viritually unheard of outside of it. It is the way finanical firms interact with themselve. Thousands of brokerages, hedge funds, software providers, institutions, and exchanges are all tied together via FIX to trade many trillions of dollars per day in as close to real-time as one can get.
+                    </p>
+                    <p>
+                    FIX exists pretty much as a field dictionary and specification for messages - enumerated lists of fields that comprise either an instruction or a notification. Although there are software providers that implement FIX and make it easy to send and receive FIX messages, it is not software <em>per se</em>. Nor is there any hardware behind it. One does not send FIX messages to the FIX system to route to a FIX participant. FIX is purely a spec - a spec than enables different particpants to cooperate together to perform work on an almost un-imaginably large scale.
+                    </p>
+                    <p>
+                    Have you ever tried to convince a development team to thoroughly document their APIs? To adopt <em>Contract-Driven Design?</em> I have. It's not pretty. "Buy why, Jim? We're the only ones who ever consume this API and we can just look at the code. It's just so much extra work." Have you ever walked into a team where the very first thing written was the API? Before a single line of code? I have. Those projects kick all kinds of ass. Year after year after year.
+                    </p> 
+                    One of the largest systms on the planet is tied togehter
+                    </p>
+                    <h3 class="text-muted">Coupling and Cohesion</h3>
+                    <p>De-coupled: Easy to reason about, isolated, well-defined, testable, re-usable, easy to scale performance wise, local complexity.
+                    <p>Cohesive:  Common method and language to communicate with other modules. Field dictionary (though be careful about shared object model) 
+                    <h3 class="text-muted">Aggressive Re-engineering</h3>
+
+                    <div reengineering-chart class="margin-side-50"></div>
+
+                    <h2 class="text-muted">TL;DR</h2>
+                    <p>So... the moral of our story, the main reason Enterprise development devolves into unpleasant, stangnant pools of low-productivity is not because internet companies have better programmers but because Internet companies have better managers. (And the reason companies don't have good software managers is becuase they do not expect to pay the $300k+/yr a decent mid-level software manager costs.) 
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted"> Who am I? Here's a <a href="professional-summary.html">Brief Resume</a>. Copyright &copy; Jim Sandoval, 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="vendor/c3.min.js"></script>
+    <script src="js/clean-blog.min.js"></script>
+    <script src="js/complexity-graphs.js"></script>
+</body>
+
+</html>

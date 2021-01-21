@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Complexity and Productivity in Software Development">
+    <meta name="author" content="Jim Sandoval">
+    <meta name="keywords" content="coupling, cohesion, software management, productivity">
+
+    <title>Jim Sandoval</title>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/clean-blog.css" rel="stylesheet">
+    <link href="vendor/c3.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .margin-side-50 {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .c3-line-normal, .c3-line-good, .c3-line-bad, .c3-line-one, .c3-line-two, .c3-line-three, .c3-line-four, .c3-line-reeng {
+            stroke-width: 4px;
+        }
+        .c3-axis-x .tick {
+           display: none;
+        }
+        .c3-axis-y .tick {
+           display: none;
+        }
+        .links line {
+           stroke: #999;
+           stroke-opacity: 0.6;
+        }
+        .nodes circle {
+           stroke: #fff;
+           stroke-width: 1.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Jim Sandoval</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="professional-summary.html">Resume</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="height: 45px; background: darkslategrey;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article ng-app="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">Reducing Combinatorial Complexity<br/>
+                    <small><em>Coupling and Cohesion, Part 2</em></small></h2>
+
+                    <p>In <a href="complexity.html">Part One</a> I dissected why Enterprise software development groups deeply compromise their productivity by letting combinatorial complexity snowball out of their control. Since complexity tends to grow to unmanageable scale, how can groups break it up successfully? How can the complexity be managed?
+                    </p>
+                    <p>
+                    One way to look at it is by viewing the central problem of software development as: How do you break a large project into individual pieces that can be worked on in isolation by small teams yet bring those pieces together into a unified whole?
+                    </p>
+                    <p>
+                    First, we'll talk about how to break things up. Then, we'll talk about how to bring things together into a unified whole. 
+                    </p>
+                    <h3 id="below-the-fold" class="text-muted">Encapsulate to Localize Complexity</h3>
+                    <p>
+                    The basic strategy for large-scale architectures to reduce combinatorial complexity is to limit interactions between components, moving from a theoretical maximum of <em>n * (n - 1) / 2</em> closer to the theoretical minimum of <em>n</em>. They do this by effectively blocking most interactions across components, cutting the <em>n</em> into sets of smaller <em>n</em>s, and then deal with how the smaller sets of <em>n</em>s interact. They partition complexity into well-defined pieces, where each piece is something inherently manageable. Large scale development efforts need to turn this:
+                    </p>
+                    <div n-equals-eight2 class="margin-side-50"></div>
+                    <p>
+                    Into this:
+                    </p>
+                    <div encapsulate class="margin-side-50"></div>
+                    </p>
+                    <p>
+                    An alternative way to look at this second diagram is likely more familiar. Here, the central hub becomes an event bus or something similar. Think of the nodes on the left as UIs and those on the right as back-end services. 
+                    </p>
+                    <div eventbus class="margin-side-50"></div>
+                    </p>
+                    <p>
+                    This can be extended such that any individual node (or service) can aggregate other services to further isolate and encapsulate complexity.  
+                    </p>
+                    <div n-tier class="margin-side-50"></div>
+                    </p>
+                    <p>
+                    When individual, isolated pieces interact in limited, well-defined ways, they are characterized as "Loosely-coupled."
+                    </p>
+                    <p>
+                    The commonly accepted way to partition an environment into loosely-coupled components is to use a "microservice" architecture. This is pretty well-traveled ground and rather than try to cover it here, I recommend Sam Newman's excellent <a href="https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358"> "Building Microservices"</a>.
+                    </p>
+                    <h3 class="text-muted">Cohesion</h3>
+                    <p>
+                    Once things are broken into manageable pieces, organizations are faced with the challenge of bringing them together into a unified, cohesive whole. Systems that do this well are characterized as "Highly-cohesive."
+                    </p>
+                    <p>
+                    Similar to combinatorial complexity itself, cohesion, left unaddressed early on, can break down over time as the environment scales and the number of services grows.
+                    </p>
+                    <p>
+                    While microservices is a workable pattern for loosely-coupled systems, what often happens as these environment get built out is that there is a lack of cohesion. Microservice design patterns ensure loose-coupling but they don't ensure high-cohesion. It gets hard to reason about how events are handled and harder to reason about how to extend and compose interactions among services. It gets hard to simply know which services are available and how to call them.
+                    </p>
+                    <p>
+                    I've worked in some large-scale environments with poor cohesion and the biggest problems developers faced in each of them was that the system, as a whole, was not well-known. For instance, a developer might know that there was service to cancel all outstanding orders on a given account but not know how to call that service. One was left to search through a couple million lines of code to find what might be an example and go from there. In one place, it was common for the service author to say "Just send me a message and I'll tell you what's wrong it." Or worse, the developer doesn't know there is a service already and writes a duplicate one. Not a very scalable or efficient way to run a development group.
+                    </p>
+                    <p>
+                    I think cohesion is harder than coupling for two reasons.
+                    </p>
+                    <p>
+                    First, developers easily grasp the idea of coupling. It's a technical design aspect. They are familiar with it in large code bases, it's a core concept in the design of object-oriented languages, and an individual developer or small team can work directly to reduce coupling within a module. It's a problem that naturally presents itself as scale increases and within the context of a single application there are well-established patterns to follow.
+                    </p>
+                    <p>
+                    Cohesion is a more slippery beast. Cohesion is solved by setting standards, good documention and by restricting the freedom of individual teams. In short, centralized control over the network transport layer (API) as a whole. This is an organizational challenge whose solution has to be imposed from the top. There is no technical solution to this problem. No individual or individual team can solve this problem unilaterally, even if they are aware of it. For various reasons, in my experience, the further up the org chart one is, the less they understand this. And many organizations are loathe to put anything under centralized control. Especially early on when cohesion failures are years away, technical managers see it as unnecessary and something that only slows them down. Later, when it has broken down, imposing it becomes difficult and highly politicized.
+                    </p>
+                    <p>
+                    The reluctance of organizations to tackle cohesiveness head-on has always struck me as a bit odd. There are many examples of this being done well, some going as far as back as the early 1970s. Maybe it's just odd to me because I had the good fortune early in my career to work on projects where there were clear examples in place. The need to do this was understood and non-controversial. 
+                    </p>
+                    <p>
+                    An early project I worked on (late 1980s) coordinated multi-lateral netting of foreign exchange (FX) payments among a consortium of interbank FX dealers. International payments are handled through a messaging network called SWIFT. Though the netting system had some interesting and quite difficult technical challenges, one thing that was not difficult was how to figure out to format and send messages among 20 different banks in way that integrated with each of their payment systems. SWIFT simply laid out a message protocol that was easy to adopt. An "MT210 message" means something very specific and has very specific contents. It was simple to figure out how to send a "MT210 message" among counterparties. Every bank already knew and spoke this language.
+                    </p>
+                    <p>
+                    Seven years later an even better example took the world by storm, one with which every developer is now intimately familiar - the World Wide Web.
+                    </p>
+                    <p>
+                    The Web took off because HTML - the message contents - and HTTP - the transport mechanism - are both simple and very strictly specified. This sort of specification is how cohesion is solved. It frankly boggles my mind how this shining example of how to do things right has essentially sailed right over the head of most developers, architects and managers. 
+                    </p>
+                    <p>
+                    Two other examples of very large scale cohesion are the FIX network, used in the securities trading industry by nearly every participant, and Amazon. <a href="https://gist.github.com/chitchcock/1281611">Steve Yegge's Platform Rant</a> details Jeff Bezos' wildly successful recognition of and solution to this problem.<a href="#footnote-1"><sup>1</sup></a>
+                    </p>
+                    <p>
+                    Cohesion is effectively managed by strict, centrally controlled protocol specification. Think of it as API governance. It is an organizatonal decision, not a technical one. It is dead simple to do. And it is one many organizations simply don't do from the outset.
+                     </p>
+                    <h3 class="text-muted">Extensibility</h3>
+                    <p>
+                    The Holy Grail of systems development are products that are built quickly, are powerful and easy-to-use, are reliable and cheap to operate, and provide a foundation to build on in the future. 
+                    </p>
+                    <p>
+                    One can score a piece of software in the following way:
+                    </p>
+                    <ol>
+                        <li>Correctness. Does it deliver the raw required functionality? Does it work? Is it buggy? Does it do everything it should do (or are help desk tickets required to fill in gaps)?
+                        </li>
+                        <li>Supportability. Does it play nice with others? Are its resource requirements known? Is it easy to tell it's up and functioning correctly? Is it easy to stop and re-start it? Can underlying libraries and dependencies by upgraded easily? Do we know how often it's used? (These concerns sometimes get lumped together as NFRs - Non-Functional Requirements.)
+                        </li>
+                        <li>Extensibility. Do we know what it does and how to use it? Can we make changes without affecting lots of other things? Can we test it to make sure we haven't broken existing things? Has it actually been re-used and extended? How many times?
+                        </li>
+                    </ol>
+                    <p>
+                    Building things such that they become a solid foundation to build on in the future - extensibility - is something teams struggle with, even when using a fundamentally sound architecture. Extensibility comes from a commitment to re-use existing components even if they need to be modified, and from a good understanding of the business domain. In any business there are things that are stable and don't fundamentally change and things that do change, often rapidly.
+                    </p>
+                    <p>
+                    For instance, genetic diagnostics follows a high-level pattern of how tests are ordered, processed, analyzed and reported. But there's lots of variation. Specimens may be blood, saliva, or tumor biopsy. Different products may involve different genes. Sequencing technology is changing rapidly and adoption of faster and cheaper sequencing technology is paramount to long-term success.
+                    </p>
+                    <p>
+                    The trick is to build the order workflow once in a way that it can then be extended to accomodate the variations. If teams re-build workflow every time in order to support the variation, the result is a lot of duplication, a lot of re-work to make even simple changes, and a larger and more expensive software inventory than is necessary. You have more <em>n</em>s - more combinatorial complexity - to manage. Software designers and software executives must understand these things; they must understand if they are building something once to which multiple variations will be bolted on to, or if they are working on just another variation. They must be able to look at a new product request and say "OK, we'll take the core done previously and change it here and here." They must take pains that abstractions used in the code are fundamentally sound so they can tell which part of a new product is the same old thing and which part is truly new, and direct projects accordingly.
+                    </p>
+                    <p>
+                    In my experience, coupling, cohesion and extensibility provide a rough framework to evaulate an organization's capability to deliver sustained value.<a href="#footnote-2"><sup>2</sup></a> Think about a bell curve of development capability.
+                    </p>
+                    <p>
+                    Bottom-tier organizations have no clue about this stuff. They code first, ask questions later, and end up with one large database with all manner of copypasta hanging off it. Developers are rewarded for how fast they duplicate functionality with minor variations into production. The culture looks only at the result from an end-user point-of-view and discounts the built-in, long-term costs of operating chaotic environments.
+                    </p>
+                    <p>
+                    Middle-tier organizations have made significant progress with a loosely-coupled architecture and are making headway with extensible common services, but they have a lot of overhead (meetings, discussions, etc) to make it happen and tend to have noisy production environments requiring lots of support.
+                    </p>
+                    <p>
+                    Top-tier organizations deliberately, consciously, ruthlessly manage all three aspects. They do it so consistently it becomes second-nature to everyone in the group.<a href="#footnote-3"><sup>3</sup></a>
+                    </p>
+
+                    <p>The moral of our story, the reason Enterprise development devolves into unpleasant, stangnant pools of low-productivity, the reason the in-house software most people use at their jobs is so bad, is chiefly because coupling/cohesion dynamics are poorly understood. They don't really become issues until a group is already stuck and by then it's too late - it's very difficult and very expensive to re-write one's architecture while keeping pace with the demands of one's sponsors and stakeholders.
+                    </p>
+                    <p>
+                    In Part One I talked about how good teams ride the build phase longer - that their architectural choices are more durable. What good teams do, and they do it from the outset, is put a huge emphasis on re-use and manage both coupling <em>and</em> cohesion.
+
+                    <div id="footnote-1" class="footnote">
+                    <sup>1</sup> Interestingly, Amazon did not centrally control a single protocol, they merely stipulated that each team must make their service knowable by other teams. They did however build a centralized service registry. While this obviously works, most enterprise groups are small enough where I think centralization of a single protocol has benefits.
+                    </div>
+                    <div id="footnote-2" class="footnote">
+                    <sup>2</sup> I realize I am omitting the impact of software development lifecycle processes here, which is important, but less so than people think (IMO). But that's a discussion for another day.
+                    </div>
+                    <div id="footnote-3" class="footnote">
+                    <sup>3</sup> My personal random walk through 25 or so development organizations over the years would argue this is not a standard bell-curve and that the bottom-tier organizations are quite common and top-tier organizations quite rare. Also, it's common in large enough organizations to have a mix of quality within the same company, some development groups top-tier and others not. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted"> Who am I? Here's a <a href="professional-summary.html">Brief Resume</a>. Copyright &copy; Jim Sandoval, 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="vendor/c3.min.js"></script>
+    <script src="js/clean-blog.min.js"></script>
+    <script src="js/complexity-graphs.js"></script>
+</body>
+
+</html>
