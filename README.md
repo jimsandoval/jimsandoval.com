@@ -4,4 +4,4 @@ Jim Sandoval is an independent software consultant. This is his personal website
 
 ## Clean Blog
 
-This is a edited copy of Clean Blog (http://startbootstrap.com/template-overviews/clean-blog/)
+This is an edited copy of Clean Blog (http://startbootstrap.com/template-overviews/clean-blog/)
